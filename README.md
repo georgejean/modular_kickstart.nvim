@@ -1,9 +1,9 @@
 # kickstart-modular.nvim
 
-**Notice**: This repository is a duplicate of a fork of [original-repo](https://github.com/nvim-lua/kickstart.nvim),
+**Notice**: This repository is a duplicate of a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim),
 which was initially forked on my GitHub account.
 As a result, this repository may not reflect the latest changes made to the fork of this project.
-For the latest updates and contributions, please visit [original repository](https://github.com/dam9000/kickstart-modular.nvim)
+For the latest updates and contributions, please visit [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
 
 ## Introduction
 
