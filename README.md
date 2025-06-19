@@ -8,31 +8,31 @@ The master branch corresponds to the repository [https://github.com/dam9000/kick
 For the latest updates and contributions, please visit [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
 
 ```markdown
- .\lua
-├──  custom
-│   └──  plugins
-│       ├──  codecompanion.lua
-│       └──  init.lua
-├──  keymaps.lua
-├──  kickstart
-│   ├──  health.lua
-│   └──  plugins
-│       ├──  autopairs.lua
-│       ├──  blink-cmp.lua
-│       ├──  conform.lua
-│       ├──  debug.lua
-│       ├──  gitsigns.lua
-│       ├──  indent_line.lua
-│       ├──  lint.lua
-│       ├──  lspconfig.lua
-│       ├──  mini.lua
-│       ├──  neo-tree.lua
-│       ├──  telescope.lua
-│       ├──  todo-comments.lua
-│       ├──  tokyonight.lua
-│       ├──  treesitter.lua
-│       └──  which-key.lua
-├──  lazy-bootstrap.lua
-├──  lazy-plugins.lua
-└──  options.lua
+📂 .\lua
+├── 📂 custom
+│   └── 📂 plugins
+│       ├── 📄 codecompanion.lua
+│       └── 📄 init.lua
+├── 📄 keymaps.lua
+├── 📂 kickstart
+│   ├── 📄 health.lua
+│   └── 📂 plugins
+│       ├── 📄 autopairs.lua
+│       ├── 📄 blink-cmp.lua
+│       ├── 📄 conform.lua
+│       ├── 📄 debug.lua
+│       ├── 📄 gitsigns.lua
+│       ├── 📄 indent_line.lua
+│       ├── 📄 lint.lua
+│       ├── 📄 lspconfig.lua
+│       ├── 📄 mini.lua
+│       ├── 📄 neo-tree.lua
+│       ├── 📄 telescope.lua
+│       ├── 📄 todo-comments.lua
+│       ├── 📄 tokyonight.lua
+│       ├── 📄 treesitter.lua
+│       └── 📄 which-key.lua
+├── 📄 lazy-bootstrap.lua
+├── 📄 lazy-plugins.lua
+└── 📄 options.lua
 ```
