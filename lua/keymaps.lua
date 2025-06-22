@@ -31,14 +31,29 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+--resizing windows
+vim.keymap.set('n', '<A-h>', '<C-w><', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<A-l>', '<C-w>>', { desc = 'Increase window width' })
+vim.keymap.set('n', '<A-j>', '<C-w>-', { desc = 'Decrease window height' })
+vim.keymap.set('n', '<A-k>', '<C-w>+', { desc = 'Increase window height' })
 -- Set original behavior of Y (as yy)
 vim.keymap.set('n', 'Y', 'yy', { noremap = true, desc = 'Yank entire line' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+-- vim.keymap.set('n', '<A-h>', '<C-w>H', { desc = 'Move window to the left' })
+-- vim.keymap.set('n', '<A-l>', '<C-w>L', { desc = 'Move window to the right' })
+-- vim.keymap.set('n', '<A-j>', '<C-w>J', { desc = 'Move window to the lower' })
+-- vim.keymap.set('n', '<A-k>', '<C-w>K', { desc = 'Move window to the upper' })
+
+-- CodeCompanion keymap
+vim.keymap.set({ 'n', 'v' }, '<LocalLeader>a', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, '<LocalLeader>c', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, silent = true })
+vim.keymap.set('v', 'ga', '<cmd>CodeCompanionChat Add<cr>', { noremap = true, silent = true })
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd [[cab cc CodeCompanion]]
+-- Expand 'ccm' into 'CodeCompanionCmd' in the command line
+vim.cmd [[cab ccm CodeCompanionCmd]]
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
