@@ -1,0 +1,36 @@
+-- NOTE: uncomment these lines to see their effects on all file types
+
+-- return {
+--   -- A snippet that expands the trigger "hi" into the string "Hello, world!".
+--   require('luasnip').snippet({ trig = 'hi', dscr = "An autotriggering snippet that expands 'hi' into 'Hello, world!'" }, { t 'Hello, world!' }),
+--
+--   -- To return multiple snippets, use one `return` statement per snippet file
+--   -- and return a table of Lua snippets.
+--   require('luasnip').snippet({ trig = 'foo' }, { t 'Another snippet.' }),
+-- }
+return {
+  -- -- Examples of complete snippets using fmt and fmta
+  --
+  -- -- \texttt
+  -- s({ trig = 'tt', dscr = "Expands 'tt' into '\texttt{}'" }, fmta('\\texttt{<>}', { i(1) })),
+  -- -- \frac
+  -- s(
+  --   { trig = 'ff', dscr = "Expands 'ff' into '\frac{}{}'" },
+  --   fmta('\\frac{<>}{<>}', {
+  --     i(1),
+  --     i(2),
+  --   })
+  -- ),
+  -- -- Equation
+  -- s(
+  --   { trig = 'eq', dscr = "Expands 'eq' into an equation environment" },
+  --   fmta(
+  --     [[
+  --      \begin{equation*}
+  --          <>
+  --      \end{equation*}
+  --    ]],
+  --     { i(1) }
+  --   )
+  -- ),
+}

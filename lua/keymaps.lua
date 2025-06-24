@@ -45,6 +45,11 @@ vim.keymap.set('n', 'Y', 'yy', { noremap = true, desc = 'Yank entire line' })
 -- vim.keymap.set('n', '<A-j>', '<C-w>J', { desc = 'Move window to the lower' })
 -- vim.keymap.set('n', '<A-k>', '<C-w>K', { desc = 'Move window to the upper' })
 
+-- set keymap to launch a function
+-- vim.keymap.set({ 'n' }, '<localleader>W', function()
+--   vim.print(require 'colorful-winsep.config')
+-- end, { desc = 'print colorful-winsep info' })
+
 -- CodeCompanion keymap
 vim.keymap.set({ 'n', 'v' }, '<LocalLeader>a', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
 vim.keymap.set({ 'n', 'v' }, '<LocalLeader>c', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, silent = true })

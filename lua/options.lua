@@ -93,4 +93,5 @@ vim.o.shellquote = ''
 vim.o.shellxquote = ''
 
 vim.o.wrap = true
+
 -- vim: ts=2 sts=2 sw=2 et

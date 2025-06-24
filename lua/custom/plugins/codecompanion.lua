@@ -9,7 +9,7 @@ return {
         adapter = 'deepseek',
       },
       cmd = {
-        adapter = 'deepseek',
+        adapter = 'mistral',
       },
     },
     opts = {
@@ -23,7 +23,7 @@ return {
           name = 'codestral',
           env = {
             url = 'https://codestral.mistral.ai',
-            api_key = 'cmd:python -c "from gestion_var import get_secret;print(get_secret(\\"CODESTRAL_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"CODESTRAL_API_KEY\\"),end=\\"\\")"',
             chat_url = '/v1/chat/completions',
           },
           -- handlers = {
@@ -46,10 +46,17 @@ return {
           },
         })
       end,
+      gemini = function()
+        return require('codecompanion.adapters').extend('gemini', {
+          env = {
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GEMINI_API_KEY\\"),end=\\"\\")"',
+          },
+        })
+      end,
       deepseek = function()
         return require('codecompanion.adapters').extend('deepseek', {
           env = {
-            api_key = 'cmd:python -c "from gestion_var import get_secret;print(get_secret(\\"DEEPSEEK_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"DEEPSEEK_API_KEY\\"),end=\\"\\")"',
           },
           schema = {
             model = {
@@ -62,11 +69,26 @@ return {
           },
         })
       end,
+      together = function()
+        return require('codecompanion.adapters').extend('openai_compatible', {
+          env = {
+            url = 'https://api.together.xyz', -- optional: default value is ollama url http://127.0.0.1:11434
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"TOGETHER_API_KEY\\"),end=\\"\\")"',
+            -- chat_url = '/v1/chat/completions', -- optional: default value, override if different
+            models_endpoint = '/v1/models', -- optional: attaches to the end of the URL to form the endpoint to retrieve models
+          },
+          schema = {
+            model = {
+              default = 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
+            },
+          },
+        })
+      end,
       groq = function()
         return require('codecompanion.adapters').extend('openai_compatible', {
           env = {
             url = 'https://api.groq.com/openai', -- optional: default value is ollama url http://127.0.0.1:11434
-            api_key = 'cmd:python -c "from gestion_var import get_secret;print(get_secret(\\"GROQ_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GROQ_API_KEY\\"),end=\\"\\")"',
             -- chat_url = '/v1/chat/completions', -- optional: default value, override if different
             models_endpoint = '/v1/models', -- optional: attaches to the end of the URL to form the endpoint to retrieve models
           },
@@ -74,6 +96,13 @@ return {
             model = {
               default = 'meta-llama/llama-4-maverick-17b-128e-instruct',
             },
+          },
+        })
+      end,
+      tavily = function()
+        return require('codecompanion.adapters').extend('tavily', {
+          env = {
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"TAVILY_API_KEY\\"),end=\\"\\")"',
           },
         })
       end,

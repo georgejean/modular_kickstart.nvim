@@ -12,6 +12,12 @@ return {
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
+        -- on_highlights = function(hl, c)
+        --   hl.WinSeparator = {
+        --     fg = c.blue,
+        --     bg = c.bg_dark,
+        --   }
+        -- end,
       }
 
       -- Load the colorscheme here.

@@ -8,14 +8,16 @@ return {
       {
         'L3MON4D3/LuaSnip',
         version = '2.*',
+        -- to enable build, clear the plugin and quit neovim (if necessary)
         build = (function()
           -- Build Step is needed for regex support in snippets.
           -- This step is not supported in many windows environments.
           -- Remove the below condition to re-enable on windows.
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
+          -- if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+          --   return
+          -- end
+          -- SHELL=sh.exe should also work if "C:/Program Files/Git/bin is in the PATH"
+          return 'make install_jsregexp CC=gcc SHELL="C:/Program Files/Git/bin/sh.exe"'
         end)(),
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
@@ -28,6 +30,12 @@ return {
           --   end,
           -- },
         },
+        config = function() -- function(_, opts)
+          require('luasnip.loaders.from_lua').lazy_load { paths = { vim.fn.stdpath 'config' .. '/lua/custom/LuaSnip/' } }
+          -- print(vim.inspect(opts))
+          -- vim.print 'hello'
+          -- vim.print(opts)
+        end,
         opts = {},
       },
       'folke/lazydev.nvim',

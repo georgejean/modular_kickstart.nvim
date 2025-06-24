@@ -34,6 +34,9 @@ return {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      -- require('mini.jump2d').setup { mappings = {
+      --   start_jumping = '<localleader><localleader>',
+      -- } }
     end,
   },
 }

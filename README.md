@@ -8,11 +8,17 @@ The master branch corresponds to the repository [https://github.com/dam9000/kick
 For the latest updates and contributions, please visit [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
 
 ```markdown
-📂 .\lua
+📂 lua
 ├── 📂 custom
+│   ├── 📂 LuaSnip
+│   │   ├── 📄 all.lua
+│   │   └── 📄 lua.lua
 │   └── 📂 plugins
 │       ├── 📄 codecompanion.lua
-│       └── 📄 init.lua
+│       ├── 📄 colorful-winsep.lua
+│       ├── 📄 flash.lua
+│       ├── 📄 init.lua
+│       └── 📄 vimtex.lua
 ├── 📄 keymaps.lua
 ├── 📂 kickstart
 │   ├── 📄 health.lua
@@ -35,4 +41,3 @@ For the latest updates and contributions, please visit [kickstart-modular.nvim](
 ├── 📄 lazy-bootstrap.lua
 ├── 📄 lazy-plugins.lua
 └── 📄 options.lua
-```
