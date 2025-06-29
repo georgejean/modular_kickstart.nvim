@@ -71,26 +71,35 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- Check if 'pwsh' is executable and set the shell accordingly
-if vim.fn.executable 'pwsh' == 1 then
-  vim.o.shell = 'pwsh'
-else
-  vim.o.shell = 'powershell'
+-- vim.o.shell = 'cmd.exe'
+if vim.fn.executable 'sh.exe' == 1 then
+  vim.o.shell = 'sh.exe'
+  vim.o.shellcmdflag = '-c'
+  vim.o.shellxquote = ''
+  vim.o.shellquote = ''
+  vim.o.shellslash = true
+  -- vim.env.TMP = "/tmp"
 end
-
--- Setting shell command flags
-vim.o.shellcmdflag =
-  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new($false);$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
-
--- Setting shell redirection
-vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
-
--- Setting shell pipe
-vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
-
--- Setting shell quote options
-vim.o.shellquote = ''
-vim.o.shellxquote = ''
+-- Check if 'pwsh' is executable and set the shell accordingly
+-- if vim.fn.executable 'sh.exe' == 1 then
+--   vim.o.shell = 'sh'
+-- else
+--   vim.o.shell = 'cmd'
+-- end
+--
+-- -- Setting shell command flags
+-- vim.o.shellcmdflag =
+--   "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new($false);$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
+--
+-- -- Setting shell redirection
+-- vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
+--
+-- -- Setting shell pipe
+-- vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
+--
+-- -- Setting shell quote options
+-- vim.o.shellquote = ''
+-- vim.o.shellxquote = ''
 
 vim.o.wrap = true
 

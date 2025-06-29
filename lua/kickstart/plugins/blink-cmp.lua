@@ -30,13 +30,15 @@ return {
           --   end,
           -- },
         },
-        config = function() -- function(_, opts)
+        config = function()
           require('luasnip.loaders.from_lua').lazy_load { paths = { vim.fn.stdpath 'config' .. '/lua/custom/LuaSnip/' } }
           -- print(vim.inspect(opts))
           -- vim.print 'hello'
           -- vim.print(opts)
+          require('luasnip').setup {
+            update_events = 'TextChanged,TextChangedI',
+          }
         end,
-        opts = {},
       },
       'folke/lazydev.nvim',
     },
