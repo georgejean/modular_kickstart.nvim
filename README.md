@@ -12,11 +12,12 @@ For the latest updates and contributions, please visit [kickstart-modular.nvim](
 ├── 📂 custom
 │   ├── 📂 LuaSnip
 │   │   ├── 📄 all.lua
-│   │   └── 📄 lua.lua
+│   │   ├── 📄 lua.lua
+│   │   ├── 📄 markdown.lua
+│   │   └── 📄 tex.lua
 │   └── 📂 plugins
 │       ├── 📄 codecompanion.lua
 │       ├── 📄 colorful-winsep.lua
-│       ├── 📄 flash.lua
 │       ├── 📄 init.lua
 │       └── 📄 vimtex.lua
 ├── 📄 keymaps.lua
