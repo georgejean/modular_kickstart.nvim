@@ -50,10 +50,7 @@ vim.keymap.set('n', 'Y', 'yy', { noremap = true, desc = 'Yank entire line' })
 --   vim.print(require 'colorful-winsep.config')
 -- end, { desc = 'print colorful-winsep info' })
 
--- CodeCompanion keymap
-vim.keymap.set({ 'n', 'v' }, '<LocalLeader>a', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
-vim.keymap.set({ 'n', 'v' }, '<LocalLeader>c', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, silent = true })
-vim.keymap.set('v', 'ga', '<cmd>CodeCompanionChat Add<cr>', { noremap = true, silent = true })
+vim.keymap.set({ 'n' }, '<C-s>', '<cmd>w!<cr>', { desc = 'Save current file' })
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd [[cab cc CodeCompanion]]

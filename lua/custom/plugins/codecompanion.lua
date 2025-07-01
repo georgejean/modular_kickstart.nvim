@@ -3,10 +3,11 @@ return {
   opts = {
     strategies = {
       chat = {
-        adapter = 'mistral',
+        adapter = 'deepseek',
+        -- adapter = 'together',
       },
       inline = {
-        adapter = 'deepseek',
+        adapter = 'mistral',
       },
       cmd = {
         adapter = 'mistral',
@@ -106,7 +107,25 @@ return {
           },
         })
       end,
+      qwen = function()
+        return require('codecompanion.adapters').extend('ollama', {
+          name = 'qwencoder', -- Give this adapter a different name to differentiate it from the default ollama adapter
+          schema = {
+            model = {
+              default = 'qwen2.5-coder:latest',
+            },
+          },
+        })
+      end,
     },
+  },
+  -- Charger quand l'utilisateur lance ces commandes
+  cmd = { 'CodeCompanion', 'CodeCompanionActions', 'CodeCompanionChat', 'CodeCompanionCmd' },
+  -- Charger quand l'utilisateur utilise ces raccourcis clavier
+  keys = {
+    { '<LocalLeader>a', '<cmd>CodeCompanionActions<CR>', mode = { 'n', 'v' }, desc = 'CodeCompanion Actions' },
+    { '<LocalLeader>c', '<cmd>CodeCompanionChat Toggle<CR>', mode = { 'n', 'v' }, desc = 'Toggle CodeCompanion Chat' },
+    { 'ga', '<cmd>CodeCompanionChat Add<CR>', mode = 'v', desc = 'Add to CodeCompanion Chat' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
