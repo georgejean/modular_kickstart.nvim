@@ -57,6 +57,8 @@ vim.cmd [[cab cc CodeCompanion]]
 -- Expand 'ccm' into 'CodeCompanionCmd' in the command line
 vim.cmd [[cab ccm CodeCompanionCmd]]
 
+vim.keymap.set('n', '<leader>ts', ':ToggleShell<CR>', { desc = '[T]oggle [S]hell (between cmd and sh)' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

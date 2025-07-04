@@ -3,11 +3,13 @@ return {
   opts = {
     strategies = {
       chat = {
+        -- adapter = 'gemini',
+        -- adapter = 'githubmodels',
         adapter = 'deepseek',
-        -- adapter = 'together',
+        -- adapter = 'mistral',
       },
       inline = {
-        adapter = 'mistral',
+        adapter = 'githubmodels',
       },
       cmd = {
         adapter = 'mistral',
@@ -51,6 +53,19 @@ return {
         return require('codecompanion.adapters').extend('gemini', {
           env = {
             api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GEMINI_API_KEY\\"),end=\\"\\")"',
+          },
+          schema = {
+            model = {
+              default = 'gemini-2.5-pro',
+              choices = {
+                ['gemini-2.5-pro'] = { opts = { can_reason = true, has_vision = true } },
+                ['gemini-2.5-flash'] = { opts = { can_reason = true, has_vision = true } },
+                ['gemini-2.0-flash'] = { opts = { has_vision = true } },
+                ['gemini-2.0-flash-lite'] = { opts = { has_vision = true } },
+                ['gemini-1.5-pro'] = { opts = { has_vision = true } },
+                ['gemini-1.5-flash'] = { opts = { has_vision = true } },
+              },
+            },
           },
         })
       end,
@@ -113,6 +128,30 @@ return {
           schema = {
             model = {
               default = 'qwen2.5-coder:latest',
+            },
+          },
+        })
+      end,
+      githubmodels = function()
+        return require('codecompanion.adapters').extend('githubmodels', {
+          env = {
+            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GITHUB_TOKEN\\"),end=\\"\\")"',
+          },
+          schema = {
+            model = {
+              default = 'gpt-4.1',
+              choices = {
+                ['o3-mini'] = { opts = { can_reason = true } },
+                ['o1'] = { opts = { can_reason = true } },
+                ['o1-mini'] = { opts = { can_reason = true } },
+                'gpt-4.1',
+                'gpt-4o',
+                'gpt-4o-mini',
+                'DeepSeek-R1',
+                'Codestral-2501',
+                'grok-3',
+                'AI21-Jamba-1.5-Large',
+              },
             },
           },
         })

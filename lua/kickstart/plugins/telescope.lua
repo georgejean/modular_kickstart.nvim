@@ -86,9 +86,10 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
+      local themes = require 'telescope.themes'
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        builtin.current_buffer_fuzzy_find(themes.get_dropdown {
           winblend = 10,
           previewer = false,
         })
@@ -107,6 +108,10 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      local shell_picker = require('custom.pickers').shell_picker
+
+      vim.keymap.set('n', '<leader>cs', shell_picker, { desc = '[C]hange [S]hell' })
     end,
   },
 }

@@ -21,8 +21,6 @@ return {
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
@@ -32,11 +30,21 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      -- set use_icons to true if you have a Nerd Font
+      statusline.setup { use_icons = vim.g.have_nerd_font }
+
       require('mini.jump2d').setup { mappings = {
         start_jumping = '<localleader><localleader>',
       } }
+
+      -- local diff = require 'mini.diff'
+      -- diff.setup {
+      --   source = diff.gen_source.none(),
+      -- }
+
+      require('mini.icons').setup()
+      -- ... and there is more!
+      --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
 }

@@ -10,15 +10,20 @@ For the latest updates and contributions, please visit [kickstart-modular.nvim](
 ```markdown
 📂 lua
 ├── 📂 custom
+│   ├── 📄 init.lua
 │   ├── 📂 LuaSnip
 │   │   ├── 📄 all.lua
 │   │   ├── 📄 lua.lua
 │   │   ├── 📄 markdown.lua
 │   │   └── 📄 tex.lua
+│   ├── 📄 pickers.lua
 │   └── 📂 plugins
 │       ├── 📄 codecompanion.lua
 │       ├── 📄 colorful-winsep.lua
+│       ├── 📄 copilot.lua
+│       ├── 📄 img-clip.lua
 │       ├── 📄 init.lua
+│       ├── 📄 render-markdown.lua
 │       └── 📄 vimtex.lua
 ├── 📄 keymaps.lua
 ├── 📂 kickstart

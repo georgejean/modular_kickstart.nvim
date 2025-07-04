@@ -104,19 +104,5 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
--- uncomment for debug purposes (you can do this for other plugin):
--- Abc = function()
---   vim.print(require 'kickstart.plugins.blink-cmp')
--- end
--- Abc()
--- vim.api.nvim_create_autocmd('WinLeave', {
---   pattern = '*',
---   callback = function()
---     local opts = require('custom.plugins.colorful-winsep').opts
---     vim.print(opts())
---   end,
--- })
--- Far better : use :Lazy and <localleader>i on the Plugin.
---
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
