@@ -4,8 +4,8 @@ return {
     strategies = {
       chat = {
         -- adapter = 'gemini',
-        -- adapter = 'githubmodels',
-        adapter = 'deepseek',
+        adapter = 'githubmodels',
+        -- adapter = 'deepseek',
         -- adapter = 'mistral',
       },
       inline = {
