@@ -5,9 +5,9 @@ local pickers = require 'telescope.pickers'
 local finders = require 'telescope.finders'
 local actions = require 'telescope.actions'
 local action_state = require 'telescope.actions.state'
-local sorters = require 'telescope.sorters'
 local previewers = require 'telescope.previewers'
 local themes = require 'telescope.themes'
+local sorters = require 'telescope.sorters'
 
 -- function picker
 function M.shell_picker()
@@ -20,19 +20,19 @@ function M.shell_picker()
     end
   end
 
+  local has_fzf, fzf = pcall(require('telescope').load_extension, 'fzf')
+
   -- options for shell_picker
   local opts = themes.get_dropdown {
     winblend = 25,
-    -- previewer = false,
-    -- preview_cutoff = 1, -- always show preview
     layout_config = {
       vertical = {
-        -- prompt_position = 'top',
         preview_height = 0.6,
       },
       mirror = true,
     },
     prompt_title = 'Choisissez un shell',
+    sorter = (has_fzf and fzf.native_fzf_sorter()) or sorters.get_fuzzy_file(),
   }
 
   -- Définition du previewer personnalisé
@@ -54,7 +54,6 @@ function M.shell_picker()
   pickers
     .new(opts, {
       finder = finders.new_table { results = shell_names },
-      sorter = sorters.get_generic_fuzzy_sorter(),
       previewer = custom_previewer,
       attach_mappings = function(prompt_bufnr, map)
         actions.select_default:replace(function()

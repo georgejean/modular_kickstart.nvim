@@ -109,9 +109,9 @@ return {
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
 
-      local shell_picker = require('custom.pickers').shell_picker
+      -- Custom shell picker
 
-      vim.keymap.set('n', '<leader>cs', shell_picker, { desc = '[C]hange [S]hell' })
+      vim.keymap.set('n', '<leader>cs', require('custom.pickers').shell_picker, { desc = '[C]hange [S]hell' })
     end,
   },
 }

@@ -239,6 +239,8 @@ return {
             },
           },
         },
+        powershell_es = {},
+        ruff = {},
       }
       ---@type MasonLspconfigSettings
       ---@diagnostic disable-next-line: missing-fields

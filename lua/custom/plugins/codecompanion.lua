@@ -9,7 +9,7 @@ return {
         -- adapter = 'mistral',
       },
       inline = {
-        adapter = 'githubmodels',
+        adapter = 'deepseek',
       },
       cmd = {
         adapter = 'mistral',

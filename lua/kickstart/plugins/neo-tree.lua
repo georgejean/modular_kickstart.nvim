@@ -11,7 +11,22 @@ return {
   },
   lazy = false,
   keys = {
-    { '<leader>e', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    {
+      '<leader>e',
+      function()
+        -- Obtenir le chemin du fichier courant
+        local file_path = vim.fn.expand '%:p'
+        if vim.fn.filereadable(file_path) == 1 then
+          -- Si le buffer est associé à un fichier, obtenir son répertoire parent
+          vim.cmd 'Neotree dir=%:p:h'
+        else
+          -- Sinon, utiliser le répertoire courant
+          vim.cmd 'Neotree reveal'
+        end
+      end,
+      desc = 'NeoTree reveal in parent dir',
+      silent = true,
+    },
   },
   opts = {
     filesystem = {

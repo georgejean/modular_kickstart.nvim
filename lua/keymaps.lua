@@ -73,4 +73,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_user_command('Floaterminal', require('custom.floaterminal').toggle_terminal, {})
+vim.keymap.set({ 'n', 't' }, '<leader>tt', '<cmd>Floaterminal<CR>', { desc = '[T]oggle [T]erminal' })
 -- vim: ts=2 sts=2 sw=2 et
