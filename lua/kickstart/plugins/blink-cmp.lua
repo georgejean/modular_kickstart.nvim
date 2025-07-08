@@ -17,7 +17,7 @@ return {
           --   return
           -- end
           -- SHELL=sh.exe should also work if "C:/Program Files/Git/bin is in the PATH"
-          return 'make install_jsregexp CC=gcc SHELL="C:/Program Files/Git/bin/sh.exe"'
+          return 'make install_jsregexp'
         end)(),
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
