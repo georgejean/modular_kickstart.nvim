@@ -73,8 +73,6 @@ vim.o.confirm = true
 
 vim.o.wrap = true
 
-vim.o.shell = 'cmd.exe'
-
 -- uncomment for debug purposes (you can do this for other plugin):
 -- Abc = function()
 --   vim.print(require 'kickstart.plugins.blink-cmp')

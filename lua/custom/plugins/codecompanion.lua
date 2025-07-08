@@ -26,7 +26,7 @@ return {
           name = 'codestral',
           env = {
             url = 'https://codestral.mistral.ai',
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"CODESTRAL_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh CODESTRAL_API_KEY',
             chat_url = '/v1/chat/completions',
           },
           -- handlers = {
@@ -52,7 +52,7 @@ return {
       gemini = function()
         return require('codecompanion.adapters').extend('gemini', {
           env = {
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GEMINI_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh GEMINI_API_KEY',
           },
           schema = {
             model = {
@@ -72,7 +72,7 @@ return {
       deepseek = function()
         return require('codecompanion.adapters').extend('deepseek', {
           env = {
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"DEEPSEEK_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh DEEPSEEK_API_KEY',
           },
           schema = {
             model = {
@@ -89,7 +89,7 @@ return {
         return require('codecompanion.adapters').extend('openai_compatible', {
           env = {
             url = 'https://api.together.xyz', -- optional: default value is ollama url http://127.0.0.1:11434
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"TOGETHER_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh TOGETHER_API_KEY',
             -- chat_url = '/v1/chat/completions', -- optional: default value, override if different
             models_endpoint = '/v1/models', -- optional: attaches to the end of the URL to form the endpoint to retrieve models
           },
@@ -104,7 +104,7 @@ return {
         return require('codecompanion.adapters').extend('openai_compatible', {
           env = {
             url = 'https://api.groq.com/openai', -- optional: default value is ollama url http://127.0.0.1:11434
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GROQ_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh GROQ_API_KEY',
             -- chat_url = '/v1/chat/completions', -- optional: default value, override if different
             models_endpoint = '/v1/models', -- optional: attaches to the end of the URL to form the endpoint to retrieve models
           },
@@ -118,7 +118,7 @@ return {
       tavily = function()
         return require('codecompanion.adapters').extend('tavily', {
           env = {
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"TAVILY_API_KEY\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh TAVILY_API_KEY',
           },
         })
       end,
@@ -135,7 +135,7 @@ return {
       githubmodels = function()
         return require('codecompanion.adapters').extend('githubmodels', {
           env = {
-            api_key = 'cmd:python -c "from gestion_var import get_var;print(get_var(\\"GITHUB_TOKEN\\"),end=\\"\\")"',
+            api_key = 'cmd:disp-sec.sh GITHUB_TOKEN',
           },
           schema = {
             model = {

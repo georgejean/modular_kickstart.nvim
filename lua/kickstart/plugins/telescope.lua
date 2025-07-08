@@ -108,10 +108,6 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
-
-      -- Custom shell picker
-
-      vim.keymap.set('n', '<leader>cs', require('custom.pickers').shell_picker, { desc = '[C]hange [S]hell' })
     end,
   },
 }
