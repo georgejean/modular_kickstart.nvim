@@ -5,4 +5,5 @@ return {
   ---@type render.md.UserConfig
   opts = {},
   ft = { 'markdown', 'codecompanion' },
+  -- enabled = false,
 }
