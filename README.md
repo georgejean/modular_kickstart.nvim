@@ -11,13 +11,11 @@ But for the latest updates and contributions, please visit [kickstart-modular.nv
 📂 lua
 ├── 📂 custom
 │   ├── 📄 floaterminal.lua
-│   ├── 📄 init.lua
 │   ├── 📂 LuaSnip
 │   │   ├── 📄 all.lua
 │   │   ├── 📄 lua.lua
 │   │   ├── 📄 markdown.lua
 │   │   └── 📄 tex.lua
-│   ├── 📄 pickers.lua
 │   └── 📂 plugins
 │       ├── 📄 codecompanion.lua
 │       ├── 📄 colorful-winsep.lua

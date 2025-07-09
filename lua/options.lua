@@ -22,16 +22,16 @@ vim.o.showmode = false
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
   vim.g.clipboard = {
-  name = "wsl-clipboard",
-  copy = {
-  ["+"] = "win32yank.exe -i --crlf",
-  ["*"] = "win32yank.exe -i --clrf",
-  },
-  paste = {
-  ["+"] = "win32yank.exe -o --lf",
-  ["*"] = "win32yank.exe -o --lf",
-  },
-  cache_enabled = 0,
+    name = 'wsl-clipboard',
+    copy = {
+      ['+'] = 'win32yank.exe -i --crlf',
+      ['*'] = 'win32yank.exe -i --clrf',
+    },
+    paste = {
+      ['+'] = 'win32yank.exe -o --lf',
+      ['*'] = 'win32yank.exe -o --lf',
+    },
+    cache_enabled = 0,
   }
 end)
 
